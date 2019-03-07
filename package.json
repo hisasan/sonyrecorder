@@ -1,0 +1,26 @@
+{
+  "name": "sonyrecorder",
+  "version": "0.1.0",
+  "description": "Control sony recorder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hisasan/sonyrecorder.git"
+  },
+  "keywords": [
+    "Sony",
+    "Recorder"
+  ],
+  "author": "Hisanobu Doi <hisasan@gmail.com> (https://github.com/hisasan)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hisasan/sonyrecorder/issues"
+  },
+  "homepage": "https://github.com/hisasan/sonyrecorder#readme",
+  "dependencies": {
+    "node-ssdp": "^4.0.0"
+  }
+}
