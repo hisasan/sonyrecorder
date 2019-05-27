@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/hisasan/sonyrecorder#readme",
   "dependencies": {
-    "node-ssdp": "^4.0.0"
+    "jsdom": "^15.1.0",
+    "node-ssdp": "^4.0.0",
+    "wakeonlan": "^0.1.0"
   }
 }
