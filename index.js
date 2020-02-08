@@ -173,16 +173,38 @@ sonyrecorder.prototype.powerOn = function() {
 sonyrecorder.prototype.setChannel = function(BroadcastType, ServiceID) {
     return this.postCommand(
         '<?xml version="1.0" encoding="utf-8"?>' +
-            '<s:Envelope s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">' +
-                '<s:Body>' +
-                    '<u:X_ChangeLiveCh xmlns:u="urn:schemas-s-bras-org:service:X_PvrControl:1">' +
-                    '<BroadcastType>' + BroadcastType + '</BroadcastType>' +
-                    '<ServiceID>' + ServiceID + '</ServiceID>' +
-                    '</u:X_ChangeLiveCh>' + 
-                '</s:Body>' +
-            '</s:Envelope>'
+        '<s:Envelope s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">' +
+            '<s:Body>' +
+                '<u:X_ChangeLiveCh xmlns:u="urn:schemas-s-bras-org:service:X_PvrControl:1">' +
+                '<BroadcastType>' + BroadcastType + '</BroadcastType>' +
+                '<ServiceID>' + ServiceID + '</ServiceID>' +
+                '</u:X_ChangeLiveCh>' + 
+            '</s:Body>' +
+        '</s:Envelope>'
     );
 };
+
+// キー操作する
+// 得られるレスポンス
+//<?xml version="1.0"?>
+//<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+//  <s:Body>
+//    <u:X_InputRemoteKeyResponse xmlns:u="urn:schemas-s-bras-org:service:X_PvrControl:1">
+//    </u:X_InputRemoteKeyResponse>
+//  </s:Body>
+//</s:Envelope>
+sonyrecorder.prototype.remoteKey = function(key) {
+    return this.postCommand(
+        '<?xml version="1.0" encoding="utf-8"?>' +
+        '<s:Envelope s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">' +
+            '<s:Body>' +
+                '<u:X_InputRemoteKey xmlns:u="urn:schemas-s-bras-org:service:X_PvrControl:1">' +
+                '<RemoteKey>' + key + '</RemoteKey>' +
+                '</u:X_InputRemoteKey>' +
+            '</s:Body>' +
+        '</s:Envelope>'
+    );
+}
 
 // レコーダーを起動させる
 // レコーダーの状態がディープスタンバイでも、スタンバイでも起動する
