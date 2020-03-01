@@ -241,7 +241,7 @@ sonyrecorder.prototype.autoPowerOn = async function() {
 
     if (powerstatus != 'PowerOn') {
         // リトライオーバー
-        throw 'autoPowerOn error';
+        throw Error('The device status could not be PowerOn');
     }
 
     return true;
