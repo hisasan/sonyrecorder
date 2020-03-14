@@ -1,6 +1,6 @@
 {
   "name": "sonyrecorder",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Control sony recorder",
   "main": "index.js",
   "scripts": {
